@@ -47,11 +47,11 @@ module "alb" {
   tag_name                        = "dev-proj-1-alb"
   lb_target_group_arn             = module.lb_target_group.dev_proj_1_lb_target_group_arn
   ec2_instance_id                 = module.ec2.dev_proj_1_ec2_instance_id
-  lb_https_listener_port          = 5000
-  lb_https_listener_protocol      = "HTTP"
+  lb_listener_port                = 5000
+  lb_listener_protocol            = "HTTP"
   lb_listener_default_action      = "forward"
-  lb_listener_port                = 445
-  lb_listener_protocol            = "HTTPS"
+  lb_https_listener_port          = 443
+  lb_https_listener_protocol      = "HTTPS"
   dev_proj_1_acm_arn              = module.aws_certification_manager.dev_proj_1_acm_arn
   lb_target_group_attachment_port = 5000
 }
